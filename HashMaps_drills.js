@@ -6,7 +6,7 @@ const HashMap = require('./HashMap');
 function main() {
   const lotr = new HashMap();
 
-  lotr.MAX_LOAD_RATIO = 0.5;
+
 
   lotr.set('Hobbit', 'Bilbo');
   lotr.set('Hobbit', 'Frodo');
@@ -20,15 +20,46 @@ function main() {
   lotr.set('HalfElven', 'Arwen');
   lotr.set('Ent', 'Treebeard');
 
-
+  console.log(lotr);
   return lotr;
 
 }
 
-main();
+// main();
+//2
+const WhatDoesThisDo = function () {
+  let str1 = 'Hello World.';
+  let str2 = 'Hello World.';
+  let map1 = new HashMap();
+  map1.set(str1, 10);
+  map1.set(str2, 20);
+  let map2 = new HashMap();
+  let str3 = str1;
+  let str4 = str2;
+  map2.set(str3, 20);
+  map2.set(str4, 10);
+
+  console.log(map1.get(str1));
+  console.log(map2.get(str3));
+}
+
+// WhatDoesThisDo();
 
 //3
 
+//4
+function RemoveDuplicates(str) {
+  let map = new Map();
+  let nonDupe = '';
+  for (let i = 0; i < str.length; i++) {
+    if (!map.has(str[i].toLowerCase())) {
+      map.set(str[i])
+      nonDupe += str[i];
+    }
+  }
+  return nonDupe;
+}
+console.log(RemoveDuplicates('google all that you think can think of'))
 
 //5
 
@@ -55,7 +86,7 @@ function palindrome(str) {
   }
   return true;
 }
-console.log(palindrome('north'));
+// console.log(palindrome('north'));
 
 function removeDuplicates2(str) {
   const stringHolder = new Map();
@@ -70,3 +101,9 @@ function removeDuplicates2(str) {
 }
 
 //7
+
+
+
+
+//SOLUTION IN LINK BELOW
+//https://gist.github.com/tparveen/70569a40ad633d7d27ac07e728e2a7ee
